@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Togl</string>
+    <string name="action_settings">设置</string>
+    <string name="title_activity_game">等级选择</string>
+    <string name="level_select">等级选择</string>
+    <string name="options">选项</string>
+    <string name="credits">荣誉</string>
+    <string name="togl">TogL</string>
+    <string name="title_activity_options">选项</string>
+    <string name="title_activity_credits">荣誉</string>
+    <string name="title_activity_selector">选择</string>
+    <string name="creds">主要开发者:\n麦克斯韦奥尔森\n\n\n\n主设计师:\n布莱斯·戴维斯</string>
+</resources>

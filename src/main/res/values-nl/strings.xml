@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Togl</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="title_activity_game">Level Selector</string>
+    <string name="level_select">LEVEL SELECTOR</string>
+    <string name="options">OPTIES</string>
+    <string name="credits">ONDERSCHEIDINGEN</string>
+    <string name="togl">TogL</string>
+    <string name="title_activity_options">Opties</string>
+    <string name="title_activity_credits">Onderscheidingen</string>
+    <string name="title_activity_selector">Keuzeschakleaar</string>
+    <string name="creds">Hoofdontwikkelaar:\nMaxwell Olmen\n\n\n\nBelangrijkste Ontwerper:\nBryce Davis</string>
+</resources>

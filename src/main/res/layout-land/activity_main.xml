@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="@color/mainBackground"
+    tools:context="com.maxwellolmen.togl.MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-60dp"
+        android:clickable="true"
+        android:singleLine="true"
+        android:textSize="30sp"
+        android:fontFamily="roboto"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="@string/level_select"
+        style="?android:attr/borderlessButtonStyle" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-10dp"
+        android:clickable="true"
+        android:singleLine="true"
+        android:textSize="30sp"
+        android:fontFamily="roboto"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="@string/tutorial"
+        style="?android:attr/borderlessButtonStyle" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:clickable="true"
+        android:singleLine="true"
+        android:textSize="30sp"
+        android:fontFamily="roboto"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="@string/options"
+        style="?android:attr/borderlessButtonStyle" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:clickable="true"
+        android:singleLine="true"
+        android:textSize="30sp"
+        android:fontFamily="roboto"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="@string/credits"
+        style="?android:attr/borderlessButtonStyle" />
+
+    <include layout="@layout/content_main" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/homeAdView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        app:adSize="BANNER"
+        app:adUnitId="@string/banner_home_id"/>
+
+</FrameLayout>

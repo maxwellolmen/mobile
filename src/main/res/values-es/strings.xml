@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Togl</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="title_activity_game">Selector de Nivel</string>
+    <string name="level_select">SELECTOR DE NIVEL</string>
+    <string name="options">OPCIONES</string>
+    <string name="credits">CRÉDITOS</string>
+    <string name="togl">TogL</string>
+    <string name="title_activity_options">Opciones</string>
+    <string name="title_activity_credits">Créditos</string>
+    <string name="title_activity_selector">Selector</string>
+    <string name="creds">Desarrollador Principal:\nMaxwell Olmen\n\n\n\nDiseñador Principal:\nBryce Davis</string>
+</resources>

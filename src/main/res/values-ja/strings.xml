@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Togl</string>
+    <string name="action_settings">[設定]</string>
+    <string name="title_activity_game">レベルセレクタ</string>
+    <string name="level_select">レベルセレクタ</string>
+    <string name="options">オプション</string>
+    <string name="credits">栄誉</string>
+    <string name="togl">TogL</string>
+    <string name="title_activity_options">オプション</string>
+    <string name="title_activity_credits">栄誉</string>
+    <string name="title_activity_selector">セレクタ</string>
+    <string name="creds">主な開発:\nマクスウェルオルソン\n\n\n\nメインデザイナー:\nブライス・デイヴィス</string>
+</resources>
