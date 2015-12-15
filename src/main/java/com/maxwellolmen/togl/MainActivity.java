@@ -1,6 +1,7 @@
 package com.maxwellolmen.togl;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -13,14 +14,49 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     InterstitialAd interstitialAd;
+    boolean music = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final MediaPlayer song1 = MediaPlayer.create(MainActivity.this, R.raw.song1);//3:48
+        final MediaPlayer song2 = MediaPlayer.create(MainActivity.this, R.raw.song2);//3:18
+        final MediaPlayer song3 = MediaPlayer.create(MainActivity.this, R.raw.song3);//3:39
+
+            song1.prepareAsync();
+            song1.start();
+
+            try {
+                Thread.sleep(240000);
+            } catch(InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+
+            song2.prepareAsync();
+            song2.start();
+
+            try {
+                Thread.sleep(240000);
+            } catch(InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+
+            song3.prepareAsync();
+            song3.start();
+
+            try {
+                Thread.sleep(240000);
+            } catch(InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+
 
         AdView hav = (AdView) findViewById(R.id.homeAdView);
         AdRequest har = new AdRequest.Builder().build();
