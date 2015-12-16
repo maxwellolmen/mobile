@@ -3,6 +3,7 @@ package com.maxwellolmen.togl;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer song1;
     MediaPlayer song2;
     MediaPlayer song3;
+
     int songNum = 0;
+    boolean song1P = false;
+    boolean song2P = false;
+    boolean song3P = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,22 +45,33 @@ public class MainActivity extends AppCompatActivity {
         interstitialAd.setAdUnitId(getString(R.string.interstitial_leave_id));
 
         requestNewInterstitial();
-
-        switch (songNum) {
-            case 0:
-                song1 = MediaPlayer.create(MainActivity.this, R.raw.song1);
-                song1.start();
-                song1.stop();
-                songNum++;
-            case 1:
-                song2 = MediaPlayer.create(MainActivity.this, R.raw.song2);
-                song2.start();
-                songNum++;
-            case 2:
-                song3 = MediaPlayer.create(MainActivity.this, R.raw.song3);
-                song3.start();
-                songNum = 0;
+        while(songNum < 3) {
+            Handler handler = new Handler();
+            switch (songNum) {
+                case 0:
+                    if (!(song3.isPlaying())) {
+                        songNum = 1;
+                        song1 = MediaPlayer.create(MainActivity.this, R.raw.song1);
+                        song1.start();
+                    }
+                    break;
+                case 1:
+                    if (!(song1.isPlaying())) {
+                        songNum = 2;
+                        song2 = MediaPlayer.create(MainActivity.this, R.raw.song1);
+                        song2.start();
+                    }
+                    break;
+                case 2:
+                    if (!(song2.isPlaying())) {
+                        songNum = 0;
+                        song3 = MediaPlayer.create(MainActivity.this, R.raw.song1);
+                        song3.start();
+                    }
+                    break;
+            }
         }
+
 
         interstitialAd.setAdListener(new AdListener() {
             @Override
@@ -151,6 +167,28 @@ public class MainActivity extends AppCompatActivity {
             case 2:
                 if(song3 != null) {
                     song3.pause();
+                }
+                break;
+        }
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        switch (songNum) {
+            case 0:
+                if (song1 != null) {
+                    song1.start();
+                }
+                break;
+            case 1:
+                if (song2 != null) {
+                    song2.start();
+                }
+                break;
+            case 2:
+                if (song3 != null) {
+                    song3.start();
                 }
                 break;
         }
