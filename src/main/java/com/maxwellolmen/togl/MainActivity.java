@@ -21,42 +21,15 @@ public class MainActivity extends AppCompatActivity {
     InterstitialAd interstitialAd;
     boolean music = true;
 
+    MediaPlayer song1;
+    MediaPlayer song2;
+    MediaPlayer song3;
+    int songNum = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final MediaPlayer song1 = MediaPlayer.create(MainActivity.this, R.raw.song1);//3:48
-        final MediaPlayer song2 = MediaPlayer.create(MainActivity.this, R.raw.song2);//3:18
-        final MediaPlayer song3 = MediaPlayer.create(MainActivity.this, R.raw.song3);//3:39
-
-            song1.prepareAsync();
-            song1.start();
-
-            try {
-                Thread.sleep(240000);
-            } catch(InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
-
-            song2.prepareAsync();
-            song2.start();
-
-            try {
-                Thread.sleep(240000);
-            } catch(InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
-
-            song3.prepareAsync();
-            song3.start();
-
-            try {
-                Thread.sleep(240000);
-            } catch(InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
-
 
         AdView hav = (AdView) findViewById(R.id.homeAdView);
         AdRequest har = new AdRequest.Builder().build();
@@ -67,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
         interstitialAd.setAdUnitId(getString(R.string.interstitial_leave_id));
 
         requestNewInterstitial();
+
+        switch (songNum) {
+            case 0:
+                song1 = MediaPlayer.create(MainActivity.this, R.raw.song1);
+                song1.start();
+                song1.stop();
+                songNum++;
+            case 1:
+                song2 = MediaPlayer.create(MainActivity.this, R.raw.song2);
+                song2.start();
+                songNum++;
+            case 2:
+                song3 = MediaPlayer.create(MainActivity.this, R.raw.song3);
+                song3.start();
+                songNum = 0;
+        }
 
         interstitialAd.setAdListener(new AdListener() {
             @Override
@@ -144,5 +133,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        switch (songNum){
+            case 0:
+                if(song1 != null) {
+                    song1.pause();
+                }
+                break;
+            case 1:
+                if(song2 != null) {
+                    song2.pause();
+                }
+                break;
+            case 2:
+                if(song3 != null) {
+                    song3.pause();
+                }
+                break;
+        }
     }
 }
