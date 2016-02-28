@@ -24,21 +24,26 @@ public class GoodJobActivity extends Activity {
                 finish();
             }
         });
-
+        //Replay Button
         replay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 switch (b.getInt("level")) {
                     case 1:
-                        Intent intent = new Intent(GoodJobActivity.this, GameActivity2.class);
+                        Intent intent = new Intent(GoodJobActivity.this, GameActivity1.class);
                         startActivity(intent);
                         finish();
                         break;
                     case 2:
-                        intent = new Intent(GoodJobActivity.this, GameActivity3.class);
+                        intent = new Intent(GoodJobActivity.this, GameActivity2.class);
                         startActivity(intent);
                         finish();
                         break;
                     case 3:
+                        intent = new Intent(GoodJobActivity.this, GameActivity3.class);
+                        startActivity(intent);
+                        finish();
+                        break;
+                    case 4:
                         intent = new Intent(GoodJobActivity.this, GameActivity4.class);
                         startActivity(intent);
                         finish();
@@ -61,7 +66,7 @@ public class GoodJobActivity extends Activity {
                 }
             }
         });
-
+        //Next Button
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 switch (b.getInt("level")) {

@@ -27,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer song3;
 
     int songNum = 0;
-    boolean song1P = false;
-    boolean song2P = false;
-    boolean song3P = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,32 +42,32 @@ public class MainActivity extends AppCompatActivity {
         interstitialAd.setAdUnitId(getString(R.string.interstitial_leave_id));
 
         requestNewInterstitial();
-        while(songNum < 3) {
+        /*while(songNum < 3) {
+            song1 = MediaPlayer.create(MainActivity.this, R.raw.song1);
+            song2 = MediaPlayer.create(MainActivity.this, R.raw.song2);
+            song3 = MediaPlayer.create(MainActivity.this, R.raw.song3);
             Handler handler = new Handler();
             switch (songNum) {
                 case 0:
-                    if (!(song3.isPlaying())) {
-                        songNum = 1;
-                        song1 = MediaPlayer.create(MainActivity.this, R.raw.song1);
-                        song1.start();
+                    song1.start();
+                    if(!song1.isPlaying()){
+                        songNum++;
                     }
                     break;
                 case 1:
-                    if (!(song1.isPlaying())) {
-                        songNum = 2;
-                        song2 = MediaPlayer.create(MainActivity.this, R.raw.song1);
-                        song2.start();
+                    song2.start();
+                    if(!song2.isPlaying()){
+                        songNum++;
                     }
                     break;
                 case 2:
-                    if (!(song2.isPlaying())) {
-                        songNum = 0;
-                        song3 = MediaPlayer.create(MainActivity.this, R.raw.song1);
-                        song3.start();
+                    song3.start();
+                    if(!song3.isPlaying()){
+                        songNum++;
                     }
                     break;
             }
-        }
+        }*/
 
 
         interstitialAd.setAdListener(new AdListener() {
